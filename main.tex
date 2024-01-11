@@ -1,0 +1,47 @@
+% Autor: Jonathan Sigrist
+% Datum: 2024-01-10
+% based on the template from Simon May
+
+\documentclass[
+a4paper,                % paperformat (DIN A4)
+titlepage=firstiscover, % separate titlepage
+captions=tableheading,  % \caption is at the top of tables
+toc=bibliography,       % show bibliography in toc
+toc=listof,             % show list of figures/tables in toc
+oneside,                % onesided
+%twoside,               % twosided
+%twocolumn,             % twocolumn layout
+automark,               % automark for headings
+12pt,                   % font size (arbitrary size with „fontsize=Xpt“)
+english,				% language (english, ngerman)
+%draft=true             % draft mode; marks overfull hboxes
+]{scrartcl}
+
+\input{tex/system/packages.tex}
+\input{tex/system/commands.tex}
+\input{tex/system/variables.tex}
+\input{tex/system/settings.tex}
+
+\begin{document}
+
+\pagenumbering{roman}
+\pagestyle{scrplain} % Zunächst ohne Kopf-/Fußzeile
+\include{tex/system/titlepage}
+% --- Inhaltsverzeichnis einbinden
+\ifthenelse{\boolean{showTOC}}{
+	\tableofcontents
+	\clearpage
+}{}
+
+\pagenumbering{arabic}
+\pagestyle{scrheadings} % Ab hier mit Kopf- und Fußzeile
+% \include{tex/chapters/}
+
+% ggf. hier Bezug/Nutzen oder sonst was
+\include{tex/system/appendix}
+\ifthenelse{\boolean{showBibliography}}{
+	\newpage
+	\printbibliography
+}{}
+
+\end{document}

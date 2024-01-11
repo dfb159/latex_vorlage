@@ -15,13 +15,20 @@ The main latex file is located at root.
 
 An example is given in the [example branch](https://github.com/dfb159/latex_vorlage/tree/example).
 
-## Using with VS Code
+### Variables and Settings
+The file ``tex/system/variables.tex`` defines a set of global variables for use throughout the document.
+Use it for defining repeating strings like title, author or email.
+
+The file ``tex/system/settings.tex`` defines the package properties for the document.
+The most important one is probably siunitx, how to display quantities and units.
+
+### Using with VS Code
 If you have a latex distribution (e.g. [tex-live](https://www.tug.org/texlive/)) and the LaTeX Workshop extension installed, you can just open the freshly cloned repo and start writing.
 
 You can enable the preview mode and activate auto compile on file change.
 This way you will see all your changes instantly.
 
-## Using with external data analysis tools
+### Using with external data analysis tools
 If you don't want to paste your data manually into the latex files every time you run your analysis tools, use the ```\include{path}``` command to dynamically bind files, which were produced by your analysis tools.
 Keep in mind, that the file path is a relative path originating from the root latex file.
 

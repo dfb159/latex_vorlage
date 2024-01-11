@@ -1,0 +1,25 @@
+% Autor: Jonathan Sigrist
+% Datum: 2024-01-10
+
+\begin{titlepage}
+	\centering
+	\vspace{2cm}
+	{\large \subjectname \par}
+	\vspace{1cm}
+	{\scshape\huge \titlename \par}
+	\vspace{1cm}
+	{\Large \subtitlename \par}
+	\vspace{2.5cm}
+	{\scshape\large Jonathan Sigrist \par}
+	{\large \email{\authoremail} \par}
+	\vspace{2cm}
+	% Falls die Datei „res/titelbild.pdf“ existiert, wird sie hier eingefügt
+	\IfFileExists{res/titleimage.pdf}{
+		\publishers{\vspace{2ex}\includegraphics[width=0.75\textwidth]{res/titleimage.pdf}}
+		\vspace{1cm}
+	}{}
+	\vfill
+	{\large \today\par}
+\end{titlepage}
+
+\maketitle

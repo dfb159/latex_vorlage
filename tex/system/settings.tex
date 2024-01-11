@@ -1,0 +1,67 @@
+% Autor: Jonathan Sigrist
+% Datum: 2024-01-10
+% Global settings after packages are loaded
+
+\onehalfspacing % 1.5 line spacing
+\recalctypearea
+
+\addtokomafont{caption}{\small} % font size of captions
+\addtokomafont{captionlabel}{\bfseries} % font of caption labels (e.g. „Figure 1:“)
+
+\numberwithin{equation}{section} % equation numbers aligned with sections
+
+\clubpenalty=1000 % discurrage orphan lines at the beginning of a page
+\widowpenalty=1000 % discourage widow lines at the beginning of a page
+\interfootnotelinepenalty=3000 % discourage footnotes to be split over multiple pages
+
+\MakeOuterQuote{"} % use " for quotes
+
+% -- siunitx
+\sisetup{ % more settings: texdoc siunitx
+	% locale=DE, % use comma as decimal separator
+	separate-uncertainty, % use \pm for uncertainties
+	%bracket-numbers = false, % no brackets around numbers
+	%quotient-mode=fraction, % use \frac for division
+	per-mode=fraction, % reciprocal-positive-first
+	fraction-function=\sfrac, % use \sfrac for fractions
+	%inter-unit-product={${}\cdot{}$}, % use \cdot for multiplication between units
+	%number-unit-product = \, % use \, between number and unit
+}
+% \AtBeginDocument{\RenewCommandCopy\qty\SI} % use the siunitx \qty, use \quantity for the physics package \qty
+
+% -- hyperref
+\hypersetup{
+	pdfborder={0 0 0.2}, % border width of links
+	pdftitle={\titlename},
+	pdfauthor={\authorname},
+	pdfsubject={\shortsubject},
+	pdfkeywords={\keywords}
+}
+
+% -- cleveref
+\crefname{equation}{}{}
+\Crefname{equation}{}{}
+
+% -- biblatex (Literaturverzeichnis)
+\IfFileExists{res/literatur.bib}{
+	\addbibresource{res/literatur.bib}
+}{}
+
+% footer
+\ifoot{}
+\cfoot{-~\pagemark~-}
+\ofoot{}
+
+% header
+\ifthenelse{\boolean{showHeader}}{
+	\KOMAoptions{headsepline}
+	\recalctypearea
+	\automark{section}
+	\ihead{\headmark}
+	\chead{}
+	\ohead{\usekomafont{pagehead}\shorttitle}
+}{}
+
+\renewcommand\maketitle{}
+\bibliography{res/literatur}
+\setlength\parindent{0pt} % no indentation for new paragraphs

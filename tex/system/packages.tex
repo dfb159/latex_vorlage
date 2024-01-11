@@ -1,0 +1,62 @@
+% Autor: Simon May
+% Datum: 2017-10-04
+
+% Autor: Jonathan Sigrist
+% Datum 2024-01-10
+
+\usepackage{babel} % syllables etc. language support
+\usepackage{iftex} % conditional loading based on the TeX engine used
+\ifLuaTeX
+	\usepackage{fontspec}
+	\fontspec{Latin Modern Roman} % font (Latin Modern)
+\else
+	\usepackage[T1]{fontenc} % font encoding (T1)
+	\usepackage[utf8]{inputenc} % text encoding (UTF-8)
+	\usepackage{lmodern} % font (Latin Modern)
+	\usepackage{textcomp} % additional symbols
+\fi
+
+\usepackage{upgreek} % upright greek letters
+
+\usepackage{calc} % use math +, -, *, / in \setlength (e.g. \setlength{\a + 3cm})
+\usepackage{xifthen} % conditional commands
+\usepackage{xparse} % more flexible commands; optional arguments etc.
+
+\usepackage{microtype} % typographic improvements (e.g. better kerning)
+\usepackage[useregional]{datetime2} % date and time formatting
+\usepackage{scrlayer-scrpage} % header and footer
+\usepackage{setspace} % line spacing
+\usepackage{enumitem} % more flexible enumerations (itemize, enumerate)
+\usepackage{csquotes} % context sensitive quotation, language sensitive (e.g. \enquote{Text})
+\usepackage{array} % more flexible tables (array and tabular)
+
+\usepackage{amstext} % text in math mode (e.g. \text{Text})
+\usepackage{gensymb} % symbols (e.g. \degree, \celsius, \ohm, \micro,
+\usepackage{textcomp} % additional symbols (e.g. \textdegree, \textcelsius, \textohm, \textmu)
+
+\usepackage[intlimits]{amsmath} % math (intlimits: limits above and below)
+\usepackage{amssymb} % math-symbols: \mathbb, \mathcal, \mathfrak, \mathscr
+\usepackage{mathtools} % more math tools (e.g. \DeclarePairedDelimiter)
+\usepackage{xfrac} % slanted fractions (\sfrac)
+\usepackage{siunitx} % SI units (e.g. \num{3 +- 0.5}, \unit{\metre\squared\per\gray\cubic\lux}, \SI{1.23}{\meter\per\second})
+\usepackage{physics} % more math tools, view documentation for full list (\abs, \norm, \vectorarrow, \dd, \dv, \pdv, \ket, \bra, \begin{pmatrix}, \mqty)
+\usepackage{newunicodechar} % Unicode characters; load after [utf8]inputenc
+\usepackage{tex/system/pdflatex_unicode-math} % Inline unicode math symbols; load before hyperref
+
+\usepackage{xcolor} % colors
+\usepackage{graphicx} % graphics (e.g. \includegraphics)
+\usepackage{gincltex} % graphics with TeX content
+\usepackage{grffile} % more file extensions for graphics
+\usepackage{wrapfig} % wrap text around figures
+\usepackage[backend=biber, sorting=none]{biblatex} % citations and bibliography; use biber as backend
+\usepackage{subcaption} % subfigures and subtables
+\usepackage{float} % more flexible floating figures and tables
+\usepackage{booktabs} % more flexible tables (e.g. \toprule, \midrule, \bottomrule)
+\usepackage{icomma} % comma as decimal separator in math mode (e.g. 1,2)
+
+\usepackage[unicode]{hyperref} % hyperlinks (e.g. \url, \href, \autoref); load at the end
+\usepackage{cleveref} % more flexible references (e.g. \cref, \Cref, \crefrange, \cref{eq:1,eq:2,eq:3,eq:4}); load after hyperref
+\usepackage{pdfpages} % include PDF pages (e.g. \includepdf[pages=-]{myfile.pdf})
+\usepackage{tikz} % TikZ graphics
+\usetikzlibrary{angles,quotes,babel,3d} % TikZ libraries
+\usepackage{tikz-qtree} % TikZ trees
