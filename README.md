@@ -22,6 +22,8 @@ Use it for defining repeating strings like title, author or email.
 The file ``tex/system/settings.tex`` defines the package properties for the document.
 The most important one is probably siunitx, how to display quantities and units.
 
+You might want to adjust the titlepage to your specific needs.
+
 ### Using with VS Code
 If you have a latex distribution (e.g. [tex-live](https://www.tug.org/texlive/)) and the LaTeX Workshop extension installed, you can just open the freshly cloned repo and start writing.
 

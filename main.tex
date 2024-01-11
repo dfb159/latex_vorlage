@@ -24,20 +24,21 @@ english,				% language (english, ngerman)
 
 \begin{document}
 
+% titlepage and toc
 \pagenumbering{roman}
-\pagestyle{scrplain} % Zunächst ohne Kopf-/Fußzeile
+\pagestyle{scrplain} % title and toc without header and footer
 \include{tex/system/titlepage}
-% --- Inhaltsverzeichnis einbinden
 \ifthenelse{\boolean{showTOC}}{
 	\tableofcontents
 	\clearpage
 }{}
 
+% actual content
 \pagenumbering{arabic}
-\pagestyle{scrheadings} % Ab hier mit Kopf- und Fußzeile
-% \include{tex/chapters/}
+\pagestyle{scrheadings} % rest of the document with header and footer
+%\include{tex/chapters/}
 
-% ggf. hier Bezug/Nutzen oder sonst was
+% appendix and bibliography
 \include{tex/system/appendix}
 \ifthenelse{\boolean{showBibliography}}{
 	\newpage
